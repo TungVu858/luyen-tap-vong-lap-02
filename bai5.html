@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+   <h2>Tính lãi ngân hàng</h2>
+    <table>
+        <tr>
+            <td>Nhập số tiền gốc</td>
+            <td><input id="tien"></td>
+            <td>VND</td>
+        </tr>
+        <tr>
+            <td>Nhập số tháng lãi</td>
+            <td><input id="thang"></td>
+            <td>Tháng</td>
+        </tr>
+        <tr>
+            <td>Lãi suốt</td>
+            <td><input id="laisuot"></td>
+            <td>%/năm</td>
+        </tr>
+        <tr>
+            <td>Tiền lãi</td>
+            <td><p id="result"></p></td>
+            <td>VND</td>
+        </tr>
+        <tr>
+            <td>Tiền lãi +gốc</td>
+            <td><p id="tong"></p></td>
+            <td>VND</td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><button onclick="tinh()">Tính</button></td>
+            <td></td>
+        </tr>
+    </table>
+    <script>
+        function tinh() {
+            let tiengoc = +document.getElementById('tien').value;
+            let thanglai = +document.getElementById('thang').value;
+            let laisuot = +document.getElementById('laisuot').value;
+            let total ="";
+                total = tiengoc*(thanglai)*(laisuot/100)/12;
+                document.getElementById('result').innerHTML = total;
+                document.getElementById('tong').innerHTML = total +tiengoc;
+        }
+    </script>
+</body>
+</html>
